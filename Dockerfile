@@ -51,7 +51,8 @@ WORKDIR /home/yacy
 COPY resources/* /home/yacy/
 
 RUN set -e && \
-  ln -s /data/yacy /home/yacy/.yacy 
+  ln -s /data/yacy /home/yacy/.yacy && \
+  ln -s /data/yacy/DATA/ /home/yacy/dist/DATA
 
 ENTRYPOINT [ "/bin/bash", "-c" ]
 #CMD [ "/home/yacy/dist/startYACY.sh", "-d", "-s", ".yacy" ]
